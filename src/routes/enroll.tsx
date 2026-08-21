@@ -93,7 +93,7 @@ function Enroll() {
 
       <section className="border-y border-border bg-card/40 py-20">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="glass-panel lift-hover p-7">
+          <div className="glass-panel p-7">
             <h2 className="font-display text-xl font-bold">Application form</h2>
             {submitted ? (
               <div className="mt-6 rounded-xl bg-accent p-6 text-accent-foreground">
