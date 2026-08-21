@@ -1,6 +1,14 @@
 {
   "name": "tanstack_start_ts",
   "private": true,
+  "homepage": "https://eastafrica1.github.io",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eastafrica1/eastafrica1.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eastafrica1/eastafrica1.github.io/issues"
+  },
   "sideEffects": false,
   "type": "module",
   "scripts": {
