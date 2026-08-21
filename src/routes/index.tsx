@@ -118,7 +118,7 @@ const news = [
 const stats = [
   { value: "4,500+", label: "Students enrolled", icon: Users, tint: "text-brand-sky" },
   { value: "18", label: "Accredited programs", icon: BookOpen, tint: "text-brand-green" },
-  { value: "6", label: "Faculties", icon: FlaskConical, tint: "text-brand-violet" },
+  { value: "7", label: "Faculties", icon: FlaskConical, tint: "text-brand-violet" },
   { value: "9", label: "Graduation classes", icon: GraduationCap, tint: "text-brand-amber" },
 ];
 
