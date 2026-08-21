@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
 
-import logo from "@/assets/eaic-logo.png.asset.json";
+import logo from "@/assets/eaic-logo-transparent.png.asset.json";
 
 export function SiteFooter() {
   return (
@@ -11,10 +11,10 @@ export function SiteFooter() {
           <img
             src={logo.url}
             alt="Eastern Africa International College logo"
-            width={72}
-            height={72}
+            width={260}
+            height={160}
             loading="lazy"
-            className="h-16 w-16 object-contain"
+            className="h-24 w-auto object-contain sm:h-28"
           />
           <h2 className="mt-4 font-display text-lg font-bold">Eastern Africa International College</h2>
           <p className="mt-2 max-w-sm text-sm text-muted-foreground">
