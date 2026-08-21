@@ -13,9 +13,8 @@ const base = process.env["BASE_PATH"] ?? "/";
 
 export default defineConfig({
   tanstackStart: {
-    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
-    server: { entry: "server" },
+    // Specify the full path to your server entry point
+    server: { entry: "./src/server.ts" },
     ...(isGithubPages
       ? {
           prerender: { enabled: true, crawlLinks: true },
@@ -31,5 +30,14 @@ export default defineConfig({
   ...(isGithubPages ? { nitro: { config: { preset: "static" } } } : {}),
   vite: {
     base,
+    environments: {
+      nitro: {
+        build: {
+          rollupOptions: {
+            input: "./src/server.ts",
+          },
+        },
+      },
+    },
   },
 });
