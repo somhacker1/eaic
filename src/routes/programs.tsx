@@ -118,7 +118,7 @@ function LevelBlock({
   items: { name: string; note?: string; years: string }[];
 }) {
   return (
-    <div className="card-surface p-7">
+    <div className="glass-panel lift-hover p-7">
       <div className="flex items-center gap-3">
         <span className="rounded-xl bg-secondary p-3">
           <Icon className={`h-6 w-6 ${tint}`} />
@@ -144,7 +144,8 @@ function Programs() {
   return (
     <>
       <section className="relative overflow-hidden border-b border-border">
-        <div className="absolute inset-0 bg-gradient-soft" />
+        <div className="absolute inset-0 mesh-bg" />
+          <div className="absolute inset-0 grid-lines opacity-40" />
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6">
           <h1 className="text-4xl font-extrabold sm:text-5xl">
             Faculties &amp; <span className="text-gradient-brand">Programs</span>
@@ -161,7 +162,7 @@ function Programs() {
           <h2 className="font-display text-2xl font-bold sm:text-3xl">Our Faculties</h2>
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {faculties.map((f) => (
-              <div key={f.name} className="card-surface p-6">
+              <div key={f.name} className="glass-panel lift-hover p-6">
                 <span className="inline-flex rounded-xl bg-secondary p-3">
                   <f.icon className={`h-6 w-6 ${f.tint}`} />
                 </span>
@@ -182,7 +183,7 @@ function Programs() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-card/60 py-20">
+      <section className="border-y border-border bg-card/40 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <h2 className="font-display text-2xl font-bold sm:text-3xl">Qualifications we award</h2>
           <p className="mt-3 max-w-2xl text-sm text-muted-foreground">

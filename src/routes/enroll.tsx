@@ -61,7 +61,8 @@ function Enroll() {
   return (
     <>
       <section className="relative overflow-hidden border-b border-border">
-        <div className="absolute inset-0 bg-gradient-soft" />
+        <div className="absolute inset-0 mesh-bg" />
+          <div className="absolute inset-0 grid-lines opacity-40" />
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6">
           <h1 className="text-4xl font-extrabold sm:text-5xl">
             Enroll <span className="text-gradient-brand">Now</span>
@@ -76,7 +77,7 @@ function Enroll() {
       <section className="py-16">
         <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((s, i) => (
-            <div key={s.title} className="card-surface p-6">
+            <div key={s.title} className="glass-panel lift-hover p-6">
               <div className="flex items-center justify-between">
                 <span className="rounded-xl bg-secondary p-3">
                   <s.icon className={`h-6 w-6 ${s.tint}`} />
@@ -90,9 +91,9 @@ function Enroll() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-card/60 py-20">
+      <section className="border-y border-border bg-card/40 py-20">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="card-surface p-7">
+          <div className="glass-panel lift-hover p-7">
             <h2 className="font-display text-xl font-bold">Application form</h2>
             {submitted ? (
               <div className="mt-6 rounded-xl bg-accent p-6 text-accent-foreground">
@@ -177,7 +178,7 @@ function Enroll() {
           </div>
 
           <div className="space-y-6">
-            <div className="card-surface p-7">
+            <div className="glass-panel lift-hover p-7">
               <h2 className="font-display text-xl font-bold">Admission requirements</h2>
               <ul className="mt-5 space-y-3">
                 {requirements.map((r) => (
@@ -188,7 +189,7 @@ function Enroll() {
                 ))}
               </ul>
             </div>
-            <div className="card-surface p-7">
+            <div className="glass-panel lift-hover p-7">
               <h2 className="font-display text-xl font-bold">Visit or call us</h2>
               <ul className="mt-5 space-y-4 text-sm text-muted-foreground">
                 <li className="flex gap-3">
