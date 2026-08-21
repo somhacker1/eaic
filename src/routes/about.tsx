@@ -59,7 +59,8 @@ function About() {
   return (
     <>
       <section className="relative overflow-hidden border-b border-border">
-        <div className="absolute inset-0 bg-gradient-soft" />
+        <div className="absolute inset-0 mesh-bg" />
+          <div className="absolute inset-0 grid-lines opacity-40" />
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6">
           <h1 className="max-w-3xl text-4xl font-extrabold sm:text-5xl">
             About <span className="text-gradient-brand">Our College</span>
@@ -99,10 +100,10 @@ function About() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-card/60 py-20">
+      <section className="border-y border-border bg-card/40 py-20">
         <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-3">
           {pillars.map((p) => (
-            <div key={p.title} className="card-surface p-7">
+            <div key={p.title} className="glass-panel lift-hover p-7">
               <span className="inline-flex rounded-xl bg-secondary p-3">
                 <p.icon className={`h-6 w-6 ${p.tint}`} />
               </span>

@@ -129,45 +129,58 @@ function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden">
-        <img
-          src={graduationBatch}
-          alt="Eastern Africa International College graduation ceremony"
-          width={1600}
-          height={1008}
-          className="absolute inset-0 h-full w-full object-cover opacity-25 dark:opacity-20"
-        />
-        <div className="absolute inset-0 bg-gradient-soft" />
-        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:py-32">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-brand-green">
-            <Globe2 className="h-4 w-4" /> Jigjiga, Ethiopia
-          </span>
-          <h1 className="mt-6 max-w-3xl text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
-            Eastern Africa <span className="text-gradient-brand">International College</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-            One of the leading centres of academic excellence in Ethiopia and the Somali Region —
-            offering accredited postgraduate, undergraduate and diploma education. Our Difference is
-            Quality.
-          </p>
-          <div className="mt-9 flex flex-wrap gap-3">
-            <Link
-              to="/enroll"
-              className="rounded-full bg-gradient-brand px-7 py-3 text-sm font-semibold text-primary-foreground shadow-lift transition-transform hover:scale-[1.03]"
-            >
-              Enroll Now
-            </Link>
-            <Link
-              to="/programs"
-              className="rounded-full border border-border bg-card px-7 py-3 text-sm font-semibold transition-colors hover:bg-secondary"
-            >
-              Explore Programs
-            </Link>
+      <section className="relative isolate overflow-hidden mesh-bg">
+        <div className="absolute inset-0 grid-lines opacity-40" />
+        <div className="blob left-[-8%] top-[-10%] h-72 w-72 bg-brand-sky/60" />
+        <div className="blob right-[-6%] top-[10%] h-80 w-80 bg-brand-green/50 [animation-delay:-4s]" />
+        <div className="blob bottom-[-14%] left-[35%] h-72 w-72 bg-brand-royal/50 [animation-delay:-8s]" />
+
+        <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 py-24 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:py-32">
+          <div className="animate-fade-up">
+            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-brand-green backdrop-blur">
+              <Globe2 className="h-4 w-4" /> Jigjiga, Ethiopia
+            </span>
+            <h1 className="text-balance-tight mt-6 text-4xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl">
+              Eastern Africa <span className="text-gradient-brand">International College</span>
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
+              One of the leading centres of academic excellence in Ethiopia and the Somali Region —
+              offering accredited postgraduate, undergraduate and diploma education. Our Difference is
+              Quality.
+            </p>
+            <div className="mt-9 flex flex-wrap gap-3">
+              <Link
+                to="/enroll"
+                className="rounded-full bg-gradient-brand px-7 py-3 text-sm font-semibold text-primary-foreground shadow-lift transition-transform hover:scale-[1.04]"
+              >
+                Enroll Now
+              </Link>
+              <Link
+                to="/programs"
+                className="rounded-full border border-border bg-card/70 px-7 py-3 text-sm font-semibold backdrop-blur transition-colors hover:bg-secondary"
+              >
+                Explore Programs
+              </Link>
+            </div>
           </div>
 
-          <dl className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {stats.map((s) => (
-              <div key={s.label} className="card-surface p-5">
+          <div className="glass-panel relative overflow-hidden p-3 ring-glow animate-fade-up [animation-delay:120ms]">
+            <img
+              src={graduationBatch}
+              alt="Eastern Africa International College graduation ceremony"
+              width={1200}
+              height={800}
+              className="w-full rounded-xl object-contain"
+            />
+          </div>
+
+          <dl className="grid gap-4 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4">
+            {stats.map((s, i) => (
+              <div
+                key={s.label}
+                className="glass-panel lift-hover animate-fade-up p-5"
+                style={{ animationDelay: `${160 + i * 80}ms` }}
+              >
                 <s.icon className={`h-7 w-7 ${s.tint}`} />
                 <dt className="mt-3 font-display text-2xl font-bold">{s.value}</dt>
                 <dd className="text-sm text-muted-foreground">{s.label}</dd>
@@ -178,7 +191,7 @@ function Home() {
       </section>
 
       {/* Partners */}
-      <section className="border-y border-border bg-card/60 py-16">
+      <section className="relative border-y border-border bg-card/50 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <h2 className="text-center font-display text-2xl font-bold sm:text-3xl">
             Our Partners &amp; Accreditors
@@ -188,7 +201,7 @@ function Home() {
           </p>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {partners.map((p) => (
-              <div key={p.name} className="card-surface flex flex-col items-start gap-3 p-6">
+              <div key={p.name} className="glass-panel lift-hover flex flex-col items-start gap-3 p-6">
                 <span className="rounded-xl bg-secondary p-3">
                   <p.icon className={`h-6 w-6 ${p.tint}`} />
                 </span>
@@ -217,7 +230,7 @@ function Home() {
 
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             {certificates.map((c) => (
-              <article key={c.title} className="card-surface overflow-hidden">
+              <article key={c.title} className="glass-panel lift-hover overflow-hidden">
                 <div className="bg-gradient-brand p-5">
                   <c.icon className="h-8 w-8 text-primary-foreground" />
                   <p className="mt-3 text-xs font-semibold uppercase tracking-widest text-primary-foreground/85">
@@ -235,7 +248,7 @@ function Home() {
       </section>
 
       {/* News */}
-      <section className="border-t border-border bg-card/50 py-20">
+      <section className="relative overflow-hidden border-t border-border bg-card/40 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <h2 className="font-display text-2xl font-bold sm:text-3xl">University News</h2>
           <p className="mt-3 text-sm text-muted-foreground">
@@ -243,7 +256,7 @@ function Home() {
           </p>
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             {news.map((n) => (
-              <article key={n.title} className="card-surface overflow-hidden">
+              <article key={n.title} className="glass-panel lift-hover overflow-hidden">
                 <img
                   src={n.image}
                   alt={n.title}
@@ -273,7 +286,7 @@ function Home() {
       {/* CTA */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="card-surface grid items-center gap-8 overflow-hidden md:grid-cols-2">
+          <div className="glass-panel grid items-center gap-8 overflow-hidden md:grid-cols-2">
             <img
               src={registrationOpen}
               alt="Eastern Africa International College registration announcement"
