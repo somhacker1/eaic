@@ -1,0 +1,138 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { Compass, Eye, Heart, Library, MapPin, Target, Users2 } from "lucide-react";
+
+import campusHero from "@/assets/campus-hero.jpg";
+import graduation from "@/assets/graduation.jpg";
+
+export const Route = createFileRoute("/about")({
+  head: () => ({
+    meta: [
+      { title: "About Us — Eastern Africa International College" },
+      {
+        name: "description",
+        content:
+          "Learn about Eastern Africa International College in Jigjiga: our mission, vision, values, campus facilities and role in higher education across Ethiopia and the Somali Region.",
+      },
+      { property: "og:title", content: "About Eastern Africa International College" },
+      {
+        property: "og:description",
+        content:
+          "Our mission, vision, values and campus in Jigjiga, Ethiopia. Our Difference is Quality.",
+      },
+    ],
+  }),
+  component: About,
+});
+
+const pillars = [
+  {
+    title: "Our Mission",
+    body: "To deliver accessible, high-quality higher education that equips students of Ethiopia and the Somali Region with professional skills and ethical leadership.",
+    icon: Target,
+    tint: "text-brand-royal",
+  },
+  {
+    title: "Our Vision",
+    body: "To be recognised as the leading private college in Eastern Africa for academic excellence, research and community impact.",
+    icon: Eye,
+    tint: "text-brand-sky",
+  },
+  {
+    title: "Our Values",
+    body: "Quality first, integrity, inclusiveness, respect for local culture, and lifelong learning for every graduate we send into the workforce.",
+    icon: Heart,
+    tint: "text-brand-rose",
+  },
+];
+
+const facilities = [
+  { title: "Modern lecture halls", icon: Users2, tint: "text-brand-green" },
+  { title: "Digital library & e-resources", icon: Library, tint: "text-brand-sky" },
+  { title: "Medical & science laboratories", icon: Compass, tint: "text-brand-violet" },
+  { title: "Central Jigjiga campus", icon: MapPin, tint: "text-brand-amber" },
+];
+
+function About() {
+  return (
+    <>
+      <section className="relative overflow-hidden border-b border-border">
+        <div className="absolute inset-0 bg-gradient-soft" />
+        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6">
+          <h1 className="max-w-3xl text-4xl font-extrabold sm:text-5xl">
+            About <span className="text-gradient-brand">Our College</span>
+          </h1>
+          <p className="mt-6 max-w-3xl text-lg text-muted-foreground">
+            Eastern Africa International College is one of the leading centres of academic excellence
+            in Ethiopia and the Somali Region. From our campus in Jigjiga we prepare students for
+            professional careers in business, health, technology, engineering, science and law.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
+          <img
+            src={campusHero}
+            alt="Eastern Africa International College campus in Jigjiga"
+            width={1600}
+            height={1008}
+            loading="lazy"
+            className="rounded-2xl object-cover shadow-lift"
+          />
+          <div>
+            <h2 className="font-display text-2xl font-bold sm:text-3xl">Who we are</h2>
+            <p className="mt-4 text-muted-foreground">
+              Founded to widen access to quality higher education in the Somali Region, the college
+              has grown into a multi-faculty institution offering postgraduate, undergraduate and
+              diploma programs. Our academic staff combine national accreditation standards with
+              practical, industry-focused teaching.
+            </p>
+            <p className="mt-4 text-muted-foreground">
+              Thousands of graduates now serve in hospitals, laboratories, government offices,
+              schools, banks and technology companies across Ethiopia and beyond — a direct result of
+              our founding promise: <span className="font-semibold text-brand-green">Our Difference is Quality.</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-border bg-card/60 py-20">
+        <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-3">
+          {pillars.map((p) => (
+            <div key={p.title} className="card-surface p-7">
+              <span className="inline-flex rounded-xl bg-secondary p-3">
+                <p.icon className={`h-6 w-6 ${p.tint}`} />
+              </span>
+              <h3 className="mt-4 font-display text-lg font-semibold">{p.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{p.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
+          <div>
+            <h2 className="font-display text-2xl font-bold sm:text-3xl">Campus &amp; facilities</h2>
+            <ul className="mt-8 space-y-4">
+              {facilities.map((f) => (
+                <li key={f.title} className="flex items-center gap-4 rounded-xl border border-border bg-card p-4">
+                  <f.icon className={`h-6 w-6 ${f.tint}`} />
+                  <span className="text-sm font-medium">{f.title}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <img
+            src={graduation}
+            alt="Graduates of Eastern Africa International College"
+            width={1200}
+            height={800}
+            loading="lazy"
+            className="rounded-2xl object-cover shadow-lift"
+          />
+        </div>
+      </section>
+    </>
+  );
+}
