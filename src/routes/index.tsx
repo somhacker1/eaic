@@ -15,10 +15,13 @@ import {
   Users,
 } from "lucide-react";
 
-import campusHero from "@/assets/campus-hero.jpg";
-import graduation from "@/assets/graduation.jpg";
-import lab from "@/assets/lab.jpg";
-import itStudents from "@/assets/it-students.jpg";
+import graduationBatchAsset from "@/assets/graduation-batch.jpg.asset.json";
+import registrationAsset from "@/assets/registration-open.jpg.asset.json";
+import teachersAsset from "@/assets/teachers.jpg.asset.json";
+
+const graduationBatch = graduationBatchAsset.url;
+const registrationOpen = registrationAsset.url;
+const teachers = teachersAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -96,22 +99,22 @@ const news = [
     date: "August 2026",
     title: "2026/27 Academic Year Registration Now Open",
     body: "Applications for Master's, Degree and Diploma programs are open at the Jigjiga campus.",
-    image: campusHero,
+    image: registrationOpen,
     tag: "Admissions",
   },
   {
     date: "July 2026",
     title: "9th Graduation Ceremony Celebrates 480 Graduates",
     body: "Graduates from Business, Health and IT faculties received their official credentials.",
-    image: graduation,
+    image: graduationBatch,
     tag: "Campus Life",
   },
   {
     date: "June 2026",
-    title: "New Medical Laboratory Complex Inaugurated",
-    body: "A modern laboratory expands practical training for Health Science students.",
-    image: lab,
-    tag: "Facilities",
+    title: "Pharmacy Department Honours Section A Instructors",
+    body: "The Pharmacy Department thanked its teaching team for their dedication and support.",
+    image: teachers,
+    tag: "Campus Life",
   },
 ];
 
@@ -128,8 +131,8 @@ function Home() {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <img
-          src={campusHero}
-          alt="Students walking on the Eastern Africa International College campus"
+          src={graduationBatch}
+          alt="Eastern Africa International College graduation ceremony"
           width={1600}
           height={1008}
           className="absolute inset-0 h-full w-full object-cover opacity-25 dark:opacity-20"
@@ -247,7 +250,7 @@ function Home() {
                   width={1200}
                   height={800}
                   loading="lazy"
-                  className="h-48 w-full object-cover"
+                  className="h-48 w-full bg-secondary object-contain"
                 />
                 <div className="p-6">
                   <div className="flex items-center gap-3 text-xs text-muted-foreground">
@@ -272,12 +275,12 @@ function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="card-surface grid items-center gap-8 overflow-hidden md:grid-cols-2">
             <img
-              src={itStudents}
-              alt="Students working in the college IT lab"
+              src={registrationOpen}
+              alt="Eastern Africa International College registration announcement"
               width={1200}
               height={800}
               loading="lazy"
-              className="h-full w-full object-cover"
+              className="h-full w-full bg-secondary object-contain"
             />
             <div className="p-8 lg:p-12">
               <h2 className="font-display text-2xl font-bold sm:text-3xl">
