@@ -1,8 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Compass, Eye, Heart, Library, MapPin, Target, Users2 } from "lucide-react";
 
-import campusHero from "@/assets/campus-hero.jpg";
-import graduation from "@/assets/graduation.jpg";
+import graduationBatchAsset from "@/assets/graduation-batch.jpg.asset.json";
+import registrationAsset from "@/assets/registration-open.jpg.asset.json";
+
+const graduationBatch = graduationBatchAsset.url;
+const registrationOpen = registrationAsset.url;
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -72,12 +75,12 @@ function About() {
       <section className="py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
           <img
-            src={campusHero}
+            src={registrationOpen}
             alt="Eastern Africa International College campus in Jigjiga"
             width={1600}
             height={1008}
             loading="lazy"
-            className="rounded-2xl object-cover shadow-lift"
+            className="rounded-2xl bg-secondary object-contain shadow-lift"
           />
           <div>
             <h2 className="font-display text-2xl font-bold sm:text-3xl">Who we are</h2>
@@ -124,12 +127,12 @@ function About() {
             </ul>
           </div>
           <img
-            src={graduation}
+            src={graduationBatch}
             alt="Graduates of Eastern Africa International College"
             width={1200}
             height={800}
             loading="lazy"
-            className="rounded-2xl object-cover shadow-lift"
+            className="rounded-2xl bg-secondary object-contain shadow-lift"
           />
         </div>
       </section>
