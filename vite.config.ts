@@ -22,10 +22,5 @@ export default isGithubPages
   : defineConfig({
       vite: {
         base,
-        build: {
-          rollupOptions: {
-            external: [],
-          },
-        },
       },
     });
