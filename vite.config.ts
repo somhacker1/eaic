@@ -10,13 +10,22 @@ export default isGithubPages
         pages: [{ path: "/" }, { path: "/about" }, { path: "/programs" }, { path: "/enroll" }],
       },
       nitro: { config: { preset: "static" } },
-      vite: { base },
+      vite: { 
+        base,
+        build: {
+          rollupOptions: {
+            external: [],
+          },
+        },
+      },
     })
   : defineConfig({
-      tanstackStart: {
-        server: { entry: "./src/server.ts" },
-      },
       vite: {
         base,
+        build: {
+          rollupOptions: {
+            external: [],
+          },
+        },
       },
     });
