@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+
+import { useI18n } from "@/lib/i18n";
 import {
   Briefcase,
   Cpu,
@@ -141,6 +143,8 @@ function LevelBlock({
 }
 
 function Programs() {
+  const { t } = useI18n();
+
   return (
     <>
       <section className="relative overflow-hidden border-b border-border">
@@ -148,18 +152,17 @@ function Programs() {
           <div className="absolute inset-0 grid-lines opacity-40" />
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6">
           <h1 className="text-4xl font-extrabold sm:text-5xl">
-            Faculties &amp; <span className="text-gradient-brand">Programs</span>
+            {t("programs.title1")} <span className="text-gradient-brand">{t("programs.title2")}</span>
           </h1>
           <p className="mt-6 max-w-3xl text-lg text-muted-foreground">
-            Accredited Master's, Bachelor's Degree and Diploma programs across seven faculties —
-            taught by qualified academic staff at our Jigjiga campus.
+            {t("programs.lead")}
           </p>
         </div>
       </section>
 
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <h2 className="font-display text-2xl font-bold sm:text-3xl">Our Faculties</h2>
+          <h2 className="font-display text-2xl font-bold sm:text-3xl">{t("programs.faculties")}</h2>
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {faculties.map((f) => (
               <div key={f.name} className="glass-panel lift-hover p-6">
@@ -185,29 +188,29 @@ function Programs() {
 
       <section className="border-y border-border bg-card/40 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <h2 className="font-display text-2xl font-bold sm:text-3xl">Qualifications we award</h2>
+          <h2 className="font-display text-2xl font-bold sm:text-3xl">{t("programs.quals")}</h2>
           <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
-            Official credential names as they appear on graduate certificates and transcripts.
+            {t("programs.qualsSub")}
           </p>
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            <LevelBlock title="Master's Degrees" icon={ScrollText} tint="text-brand-royal" items={masters} />
-            <LevelBlock title="Bachelor's Degrees" icon={GraduationCap} tint="text-brand-sky" items={degrees} />
-            <LevelBlock title="Diplomas" icon={FlaskConical} tint="text-brand-green" items={diplomas} />
+            <LevelBlock title={t("programs.masters")} icon={ScrollText} tint="text-brand-royal" items={masters} />
+            <LevelBlock title={t("programs.degrees")} icon={GraduationCap} tint="text-brand-sky" items={degrees} />
+            <LevelBlock title={t("programs.diplomas")} icon={FlaskConical} tint="text-brand-green" items={diplomas} />
           </div>
         </div>
       </section>
 
       <section className="py-16">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
-          <h2 className="font-display text-2xl font-bold">Found your program?</h2>
+          <h2 className="font-display text-2xl font-bold">{t("programs.found")}</h2>
           <p className="mt-3 text-sm text-muted-foreground">
-            Submit your application and our admissions office will contact you within two working days.
+            {t("programs.foundSub")}
           </p>
           <Link
             to="/enroll"
             className="mt-7 inline-flex rounded-full bg-gradient-brand px-7 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition-transform hover:scale-[1.03]"
           >
-            Enroll Now
+            {t("home.cta1")}
           </Link>
         </div>
       </section>
