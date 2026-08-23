@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+
+import { useI18n } from "@/lib/i18n";
 import { Compass, Eye, Heart, Library, MapPin, Target, Users2 } from "lucide-react";
 
 import graduationBatchAsset from "@/assets/graduation-batch.jpg.asset.json";
@@ -29,19 +31,19 @@ export const Route = createFileRoute("/about")({
 
 const pillars = [
   {
-    title: "Our Mission",
+    titleKey: "about.mission",
     body: "To deliver accessible, high-quality higher education that equips students of Ethiopia and the Somali Region with professional skills and ethical leadership.",
     icon: Target,
     tint: "text-brand-royal",
   },
   {
-    title: "Our Vision",
+    titleKey: "about.vision",
     body: "To be recognised as the leading private college in Eastern Africa for academic excellence, research and community impact.",
     icon: Eye,
     tint: "text-brand-sky",
   },
   {
-    title: "Our Values",
+    titleKey: "about.values",
     body: "Quality first, integrity, inclusiveness, respect for local culture, and lifelong learning for every graduate we send into the workforce.",
     icon: Heart,
     tint: "text-brand-rose",
@@ -56,6 +58,8 @@ const facilities = [
 ];
 
 function About() {
+  const { t } = useI18n();
+
   return (
     <>
       <section className="relative overflow-hidden border-b border-border">
@@ -63,12 +67,10 @@ function About() {
           <div className="absolute inset-0 grid-lines opacity-40" />
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6">
           <h1 className="max-w-3xl text-4xl font-extrabold sm:text-5xl">
-            About <span className="text-gradient-brand">Our College</span>
+            {t("about.title")}
           </h1>
           <p className="mt-6 max-w-3xl text-lg text-muted-foreground">
-            Eastern Africa International College is one of the leading centres of academic excellence
-            in Ethiopia and the Somali Region. From our campus in Jigjiga we prepare students for
-            professional careers in business, health, technology, engineering, science and law.
+            {t("about.lead")}
           </p>
         </div>
       </section>
@@ -103,11 +105,11 @@ function About() {
       <section className="border-y border-border bg-card/40 py-20">
         <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-3">
           {pillars.map((p) => (
-            <div key={p.title} className="glass-panel lift-hover p-7">
+            <div key={p.titleKey} className="glass-panel lift-hover p-7">
               <span className="inline-flex rounded-xl bg-secondary p-3">
                 <p.icon className={`h-6 w-6 ${p.tint}`} />
               </span>
-              <h3 className="mt-4 font-display text-lg font-semibold">{p.title}</h3>
+              <h3 className="mt-4 font-display text-lg font-semibold">{t(p.titleKey)}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{p.body}</p>
             </div>
           ))}
@@ -117,7 +119,7 @@ function About() {
       <section className="py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
           <div>
-            <h2 className="font-display text-2xl font-bold sm:text-3xl">Campus &amp; facilities</h2>
+            <h2 className="font-display text-2xl font-bold sm:text-3xl">{t("about.campus")}</h2>
             <ul className="mt-8 space-y-4">
               {facilities.map((f) => (
                 <li key={f.title} className="flex items-center gap-4 rounded-xl border border-border bg-card p-4">
