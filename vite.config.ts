@@ -12,12 +12,15 @@ export default isGithubPages
       nitro: { 
         config: { 
           preset: "static",
+          // Skip SSR build for static export
+          logLevel: 0,
         } 
       },
       vite: { 
         base,
         build: {
           outDir: ".output/public",
+          minify: true,
         },
       },
     })
