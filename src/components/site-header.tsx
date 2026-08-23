@@ -1,19 +1,21 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
+import { Languages, Menu, X } from "lucide-react";
 import { useState } from "react";
 
 import logo from "@/assets/eaic-logo-transparent.png.asset.json";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { LANGUAGES, useI18n } from "@/lib/i18n";
 
 const nav = [
-  { to: "/", label: "Home" },
-  { to: "/about", label: "About Us" },
-  { to: "/programs", label: "Programs" },
-  { to: "/enroll", label: "Enroll Now" },
+  { to: "/", key: "nav.home" },
+  { to: "/about", key: "nav.about" },
+  { to: "/programs", key: "nav.programs" },
+  { to: "/enroll", key: "nav.enroll" },
 ] as const;
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const { t, lang, openPicker } = useI18n();
+  const current = LANGUAGES.find((l) => l.code === lang);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-xl">
@@ -22,16 +24,16 @@ export function SiteHeader() {
           <img
             src={logo.url}
             alt="Eastern Africa International College logo"
-            width={180}
-            height={110}
-            className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 sm:h-20"
+            width={200}
+            height={124}
+            className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105 sm:h-24"
           />
           <span className="leading-tight">
             <span className="block font-display text-sm font-bold sm:text-lg">
               Eastern Africa International College
             </span>
             <span className="block text-xs font-medium tracking-wide text-brand-green">
-              Our Difference is Quality
+              {t("brand.tagline")}
             </span>
           </span>
         </Link>
@@ -48,18 +50,26 @@ export function SiteHeader() {
               }}
               activeOptions={{ exact: item.to === "/" }}
             >
-              {item.label}
+              {t(item.key)}
             </Link>
           ))}
         </nav>
 
         <div className="flex items-center gap-2">
-          <ThemeToggle />
+          <button
+            type="button"
+            onClick={openPicker}
+            aria-label={t("gate.button")}
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-2 text-xs font-semibold transition-colors hover:bg-secondary"
+          >
+            <Languages className="h-4 w-4 text-brand-sky" />
+            <span className="hidden sm:inline">{current?.native}</span>
+          </button>
           <Link
             to="/enroll"
             className="hidden rounded-full bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-soft transition-transform hover:scale-[1.04] sm:inline-flex"
           >
-            Apply Now
+            {t("nav.apply")}
           </Link>
           <button
             type="button"
@@ -81,7 +91,7 @@ export function SiteHeader() {
               onClick={() => setOpen(false)}
               className="block rounded-lg px-3 py-2.5 text-sm font-medium text-foreground hover:bg-secondary"
             >
-              {item.label}
+              {t(item.key)}
             </Link>
           ))}
         </nav>

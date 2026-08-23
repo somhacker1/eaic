@@ -2,8 +2,11 @@ import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 import logo from "@/assets/eaic-logo-transparent.png.asset.json";
+import { useI18n } from "@/lib/i18n";
 
 export function SiteFooter() {
+  const { t } = useI18n();
+
   return (
     <footer className="border-t border-border bg-card">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
@@ -11,30 +14,29 @@ export function SiteFooter() {
           <img
             src={logo.url}
             alt="Eastern Africa International College logo"
-            width={260}
-            height={160}
+            width={280}
+            height={175}
             loading="lazy"
-            className="h-24 w-auto object-contain sm:h-28"
+            className="h-28 w-auto object-contain sm:h-32"
           />
           <h2 className="mt-4 font-display text-lg font-bold">Eastern Africa International College</h2>
-          <p className="mt-2 max-w-sm text-sm text-muted-foreground">
-            A leading centre of academic excellence in Jigjiga, serving Ethiopia and the Somali
-            Region with quality higher education.
-          </p>
+          <p className="mt-2 max-w-sm text-sm text-muted-foreground">{t("footer.about")}</p>
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-brand-green">Explore</h3>
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-brand-green">
+            {t("footer.explore")}
+          </h3>
           <ul className="mt-4 space-y-2 text-sm">
             {[
-              { to: "/", label: "Home" },
-              { to: "/about", label: "About Us" },
-              { to: "/programs", label: "Programs" },
-              { to: "/enroll", label: "Enroll Now" },
+              { to: "/", key: "nav.home" },
+              { to: "/about", key: "nav.about" },
+              { to: "/programs", key: "nav.programs" },
+              { to: "/enroll", key: "nav.enroll" },
             ].map((l) => (
               <li key={l.to}>
                 <Link to={l.to} className="text-muted-foreground transition-colors hover:text-foreground">
-                  {l.label}
+                  {t(l.key)}
                 </Link>
               </li>
             ))}
@@ -42,7 +44,9 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-brand-sky">Contact</h3>
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-brand-sky">
+            {t("footer.contact")}
+          </h3>
           <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
             <li className="flex gap-3">
               <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-rose" />
@@ -64,7 +68,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-border px-4 py-5 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Eastern Africa International College. All rights reserved.
+        © {new Date().getFullYear()} Eastern Africa International College. {t("footer.rights")}
       </div>
     </footer>
   );
