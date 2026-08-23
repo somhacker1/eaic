@@ -12,19 +12,12 @@ export default isGithubPages
       nitro: { 
         config: { 
           preset: "static",
-          rollupConfig: {
-            output: {
-              dir: ".output/public"
-            }
-          }
         } 
       },
       vite: { 
         base,
         build: {
-          rollupOptions: {
-            input: "./index.html"
-          },
+          outDir: ".output/public",
         },
       },
     })
