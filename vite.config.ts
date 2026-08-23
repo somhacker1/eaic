@@ -9,12 +9,21 @@ export default isGithubPages
         prerender: { enabled: true, crawlLinks: true },
         pages: [{ path: "/" }, { path: "/about" }, { path: "/programs" }, { path: "/enroll" }],
       },
-      nitro: { config: { preset: "static" } },
+      nitro: { 
+        config: { 
+          preset: "static",
+          rollupConfig: {
+            output: {
+              dir: ".output/public"
+            }
+          }
+        } 
+      },
       vite: { 
         base,
         build: {
           rollupOptions: {
-            external: [],
+            input: "./index.html"
           },
         },
       },
