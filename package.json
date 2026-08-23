@@ -21,9 +21,6 @@
     "predeploy": "cross-env GITHUB_PAGES=true npm run build",
     "deploy": "gh-pages -d .output/public -b gh-pages"
   },
-  "overrides": {
-    "rolldown": "0.12.1"
-  },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
     "@radix-ui/react-accordion": "^1.2.12",
