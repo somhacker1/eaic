@@ -9,19 +9,14 @@ export default isGithubPages
         prerender: { enabled: true, crawlLinks: true },
         pages: [{ path: "/" }, { path: "/about" }, { path: "/programs" }, { path: "/enroll" }],
       },
-      nitro: { 
-        config: { 
+      nitro: {
+        config: {
           preset: "static",
-          // Skip SSR build for static export
           logLevel: 0,
-        } 
-      },
-      vite: { 
-        base,
-        build: {
-          outDir: ".output/public",
-          minify: true,
         },
+      },
+      vite: {
+        base,
       },
     })
   : defineConfig({
