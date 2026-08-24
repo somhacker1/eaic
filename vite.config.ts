@@ -5,15 +5,13 @@ const base = process.env["BASE_PATH"] ?? "/";
 
 export default isGithubPages
   ? defineConfig({
+      // Disable the nitro/Cloudflare deploy plugin so the Vite server
+      // environment builds a plain `server.js` that the prerender preview
+      // server can load. We only ship the prerendered static HTML + assets.
+      nitro: false,
       tanstackStart: {
         prerender: { enabled: true, crawlLinks: true },
         pages: [{ path: "/" }, { path: "/about" }, { path: "/programs" }, { path: "/enroll" }],
-      },
-      nitro: {
-        config: {
-          preset: "static",
-          logLevel: 0,
-        },
       },
       vite: {
         base,
