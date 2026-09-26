@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 import logo from "@/assets/eaic-logo-transparent.png.asset.json";
+import fikradoLogo from "@/assets/fikrado-logo.png.asset.json";
 import { useI18n } from "@/lib/i18n";
 
 export function SiteFooter() {
