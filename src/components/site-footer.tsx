@@ -68,21 +68,29 @@ export function SiteFooter() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-border px-4 py-5 text-center text-xs text-muted-foreground">
+      <div className="border-t border-border px-4 py-8 text-center text-sm text-muted-foreground">
         <p>
           © {new Date().getFullYear()} Eastern Africa International College. {t("footer.rights")}
         </p>
-        <p className="mt-2 flex items-center justify-center gap-2">
+        <a
+          href="https://fikrado2.github.io"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group mt-3 inline-flex items-center justify-center gap-2.5 rounded-full border border-border bg-card/60 px-4 py-2 transition-all hover:border-brand-amber/60"
+        >
           <img
             src={fikradoLogo.url}
             alt="FIKRADO SECURITY logo"
-            width={24}
-            height={24}
+            width={36}
+            height={36}
             loading="lazy"
-            className="h-6 w-auto rounded-sm object-contain"
+            className="h-9 w-auto rounded-sm object-contain glow-pulse"
           />
-          <span>Powered by <span className="font-semibold text-foreground">FIKRADO SECURITY</span></span>
-        </p>
+          <span className="text-base">
+            Powered by{" "}
+            <span className="font-bold tracking-wide text-gradient-brand">FIKRADO SECURITY</span>
+          </span>
+        </a>
       </div>
     </footer>
   );
