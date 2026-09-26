@@ -69,7 +69,20 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-border px-4 py-5 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Eastern Africa International College. {t("footer.rights")}
+        <p>
+          © {new Date().getFullYear()} Eastern Africa International College. {t("footer.rights")}
+        </p>
+        <p className="mt-2 flex items-center justify-center gap-2">
+          <img
+            src={fikradoLogo.url}
+            alt="FIKRADO SECURITY logo"
+            width={24}
+            height={24}
+            loading="lazy"
+            className="h-6 w-auto rounded-sm object-contain"
+          />
+          <span>Powered by <span className="font-semibold text-foreground">FIKRADO SECURITY</span></span>
+        </p>
       </div>
     </footer>
   );
