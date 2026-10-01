@@ -147,13 +147,13 @@ function Home() {
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link
-                to="/enroll"
+                to="/enroll/"
                 className="rounded-full bg-gradient-brand px-7 py-3 text-sm font-semibold text-primary-foreground shadow-lift transition-transform hover:scale-[1.04]"
               >
                 Enroll Now
               </Link>
               <Link
-                to="/programs"
+                to="/programs/"
                 className="rounded-full border border-border bg-card/70 px-7 py-3 text-sm font-semibold backdrop-blur transition-colors hover:bg-secondary"
               >
                 Explore Programs
@@ -220,7 +220,7 @@ function Home() {
                 Official postgraduate credentials awarded by Eastern Africa International College.
               </p>
             </div>
-            <Link to="/programs" className="text-sm font-semibold text-brand-sky hover:underline">
+            <Link to="/programs/" className="text-sm font-semibold text-brand-sky hover:underline">
               View all programs →
             </Link>
           </div>
@@ -301,7 +301,7 @@ function Home() {
                 guide you through the process.
               </p>
               <Link
-                to="/enroll"
+                to="/enroll/"
                 className="mt-7 inline-flex rounded-full bg-gradient-brand px-7 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition-transform hover:scale-[1.03]"
               >
                 Start your application

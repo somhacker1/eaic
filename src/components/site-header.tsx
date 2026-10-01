@@ -65,7 +65,7 @@ export function SiteHeader() {
             <span className="hidden sm:inline">{current?.native}</span>
           </button>
           <Link
-            to="/enroll"
+            to="/enroll/"
             className="hidden rounded-full bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-soft transition-transform hover:scale-[1.04] sm:inline-flex"
           >
             {t("nav.apply")}
