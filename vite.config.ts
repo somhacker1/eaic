@@ -13,7 +13,7 @@ export default isStaticHost
       nitro: false,
       tanstackStart: {
         prerender: { enabled: true, crawlLinks: true },
-        pages: [{ path: "/" }, { path: "/about" }, { path: "/programs" }, { path: "/enroll" }],
+        pages: [{ path: "/" }, { path: "/about/" }, { path: "/programs/" }, { path: "/enroll/" }],
       },
       vite: {
         base,
