@@ -3,11 +3,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useI18n } from "@/lib/i18n";
 import { Compass, Eye, Heart, Library, MapPin, Target, Users2 } from "lucide-react";
 
-import graduationBatchAsset from "@/assets/graduation-batch.jpg.asset.json";
-import registrationAsset from "@/assets/registration-open.jpg.asset.json";
 
-const graduationBatch = graduationBatchAsset.url;
-const registrationOpen = registrationAsset.url;
+const graduationBatch = "/images/graduation-batch.jpg";
+const registrationOpen = "/images/registration-open.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({

@@ -2,7 +2,6 @@ import { Check, Globe, Languages } from "lucide-react";
 import { useState } from "react";
 
 import { LANGUAGES, useI18n, type LangCode } from "@/lib/i18n";
-import logo from "@/assets/eaic-logo-transparent.png.asset.json";
 
 export function LanguageGate() {
   const { lang, pickerOpen, confirm, closePicker, chosen, t } = useI18n();
@@ -20,7 +19,7 @@ export function LanguageGate() {
       <div className="glass-panel relative w-full max-w-2xl p-6 sm:p-9 ring-glow animate-fade-up">
         <div className="flex items-center gap-4">
           <img
-            src={logo.url}
+            src="/images/eaic-logo-transparent.png"
             alt="Eastern Africa International College logo"
             width={160}
             height={100}

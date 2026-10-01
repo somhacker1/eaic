@@ -15,13 +15,10 @@ import {
   Users,
 } from "lucide-react";
 
-import graduationBatchAsset from "@/assets/graduation-batch.jpg.asset.json";
-import registrationAsset from "@/assets/registration-open.jpg.asset.json";
-import teachersAsset from "@/assets/teachers.jpg.asset.json";
 
-const graduationBatch = graduationBatchAsset.url;
-const registrationOpen = registrationAsset.url;
-const teachers = teachersAsset.url;
+const graduationBatch = "/images/graduation-batch.jpg";
+const registrationOpen = "/images/registration-open.jpg";
+const teachers = "/images/teachers.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({

@@ -2,7 +2,6 @@ import { Link } from "@tanstack/react-router";
 import { Languages, Menu, X } from "lucide-react";
 import { useState } from "react";
 
-import logo from "@/assets/eaic-logo-transparent.png.asset.json";
 import { LANGUAGES, useI18n } from "@/lib/i18n";
 
 const nav = [
@@ -22,7 +21,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link to="/" className="group flex items-center gap-3" onClick={() => setOpen(false)}>
           <img
-            src={logo.url}
+            src="/images/eaic-logo-transparent.png"
             alt="Eastern Africa International College logo"
             width={200}
             height={124}
