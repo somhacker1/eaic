@@ -29,9 +29,9 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-2 text-sm">
             {[
               { to: "/", key: "nav.home" },
-              { to: "/about", key: "nav.about" },
-              { to: "/programs", key: "nav.programs" },
-              { to: "/enroll", key: "nav.enroll" },
+              { to: "/about/", key: "nav.about" },
+              { to: "/programs/", key: "nav.programs" },
+              { to: "/enroll/", key: "nav.enroll" },
             ].map((l) => (
               <li key={l.to}>
                 <Link to={l.to} className="text-muted-foreground transition-colors hover:text-foreground">

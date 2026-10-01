@@ -6,9 +6,9 @@ import { LANGUAGES, useI18n } from "@/lib/i18n";
 
 const nav = [
   { to: "/", key: "nav.home" },
-  { to: "/about", key: "nav.about" },
-  { to: "/programs", key: "nav.programs" },
-  { to: "/enroll", key: "nav.enroll" },
+  { to: "/about/", key: "nav.about" },
+  { to: "/programs/", key: "nav.programs" },
+  { to: "/enroll/", key: "nav.enroll" },
 ] as const;
 
 export function SiteHeader() {
