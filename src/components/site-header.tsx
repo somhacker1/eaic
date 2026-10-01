@@ -2,14 +2,13 @@ import { Link } from "@tanstack/react-router";
 import { Languages, Menu, X } from "lucide-react";
 import { useState } from "react";
 
-import logo from "@/assets/eaic-logo-transparent.png.asset.json";
 import { LANGUAGES, useI18n } from "@/lib/i18n";
 
 const nav = [
   { to: "/", key: "nav.home" },
-  { to: "/about", key: "nav.about" },
-  { to: "/programs", key: "nav.programs" },
-  { to: "/enroll", key: "nav.enroll" },
+  { to: "/about/", key: "nav.about" },
+  { to: "/programs/", key: "nav.programs" },
+  { to: "/enroll/", key: "nav.enroll" },
 ] as const;
 
 export function SiteHeader() {
@@ -22,7 +21,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link to="/" className="group flex items-center gap-3" onClick={() => setOpen(false)}>
           <img
-            src={logo.url}
+            src="/images/eaic-logo-transparent.png"
             alt="Eastern Africa International College logo"
             width={200}
             height={124}
@@ -66,7 +65,7 @@ export function SiteHeader() {
             <span className="hidden sm:inline">{current?.native}</span>
           </button>
           <Link
-            to="/enroll"
+            to="/enroll/"
             className="hidden rounded-full bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-soft transition-transform hover:scale-[1.04] sm:inline-flex"
           >
             {t("nav.apply")}

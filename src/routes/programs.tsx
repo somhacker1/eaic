@@ -207,7 +207,7 @@ function Programs() {
             {t("programs.foundSub")}
           </p>
           <Link
-            to="/enroll"
+            to="/enroll/"
             className="mt-7 inline-flex rounded-full bg-gradient-brand px-7 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition-transform hover:scale-[1.03]"
           >
             {t("home.cta1")}

@@ -1,3 +1,9 @@
 [build]
   command = "bun run build"
-  publish = "dist"
+  publish = "dist/client"
+
+# SPA fallback: unknown paths serve the prerendered home page shell
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
